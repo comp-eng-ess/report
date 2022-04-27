@@ -3,6 +3,9 @@
 \usepackage{fontspec}
 \usepackage{babel}
 \usepackage{xcolor}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\graphicspath{ {./images/}}
 \babelprovide[main, import]{thai}
 \babelfont{rm}{TH Sarabun New}
 \usepackage{hyperref}
@@ -14,8 +17,8 @@
 \setmonofont{THSarabunNewBold.ttf}
 \geometry{margin=1in}
 
-\title{CP Rate My Professor}
-\author{Naphat Darunaitorn, Noppakorn Jiravaranun,\\ Nopparuj Poonsubanan, Ittipat Yodprasit}
+\title{\huge\textbf{CP Rate My Professor}}
+\author{Naphat Darunaitorn\\ Noppakorn Jiravaranun\\ Nopparuj Poonsubanan\\ Ittipat Yodprasit}
 \begin{document}
 \maketitle
 \pagebreak
@@ -32,7 +35,7 @@
 เพื่อระบบการศึกษาในภาวะวิกฤตินี้ให้ดียิ่งขึ้น
 
 \section{การเข้าถึงหน้าเว็บ}
-สามารถเข้าถึงหน้าเว็บ และ ใช้งานได้จริงที่\\{\color{blue}\url{https://cp-rate-my-professor.web.app/}}
+สามารถเข้าถึงหน้าเว็บ และ ใช้งานได้จริงที่ {\color{blue}\url{https://cp-rate-my-professor.web.app/}}
 
 \section{การใช้งานเว็บ}
 หน้าเว็บ CP Rate My Professor จะเป็นเว็บสำหรับให้คะแนนและแสดงความคิดเห็นต่อการเรียนการสอนของอาจารย์แต่ละท่าน
@@ -57,11 +60,32 @@
 
 ส่วนบนมีการแสดงชื่ออาจารย์ที่กำลังถูกแสดงความคิดเห็น มีช่องสำหรับกรอกคะแนน รหัสวิชา ตอนเรียน ภาคเรียน ปีการศึกษา และช่องแสดงความคิดเห็นและมีปุ่ม submit เพื่อส่งข้อมูลที่กรอกไปยัง database เพื่อแสดงผลต่อไป
 ในส่วนของหน้าเว็บเพจในการเข้าไปในหน้าอื่นนอกเหนือจากหน้าหลักจะมีการวาดหน้าเว็บใหม่บนหน้าเดิม เพื่อให้ถูกต้องตามวัตถุประสงค์ single-page web application
-
-
+\section{Source Code}
+Source Code ทั้งหมดสามารถเข้าถึงได้ที่ {\color{blue}\url{https://github.com/comp-eng-ess}}\\
+Source Code สำหรับเว็บไซต์เข้าถึงได้ที่ {\color{blue}\url{https://github.com/comp-eng-ess/cp-rate-my-professor}}
 \pagebreak
 \section{Basic requirement}
-ทางกลุ่มเราตกลงกันทำเว็บประเมินอาจารย์เพื่อสะท้อนความคิดเห็นของผู้เรียนต่ออาจารย์ โดยคาดหวังให้ผู้เรียนสะท้อนข้อดีและข้อเสียของการสอนในรูปแบบต่างๆของอาจารย์แต่ละท่านเพื่อทั้งตัวอาจารย์และบุคลากรที่เกี่ยวข้องสามารถนำข้อมูลไปปรับใช้หรือพัฒนาการสอน ผู้เรียนรุ่นต่อไปสามารถพิจารณาเข้าเรียนจากลักษณะการสอนของอาจารย์แต่ละท่านที่ตรงกับวิธีการเรียนของแต่ละคนได้ เราทำ single-page web application ให้มีหลายหน้า (home, about, contact ,หน้ารายละเอียดของอาจารย์แต่ละท่าน) โดยการวาด elements ในหน้าเดิม โดยทั้งส่วนหน้าบ้านและหลังบ้านใช้ libraries/frameworks/plugins เพียงในส่วนของ activity 6 และ 7 เท่านั้น โดยสมาชิกกลุ่มได้มีการวางแผนและแบ่งงาน มีการนัดประชุมเพื่ออัพเดทงานที่เหลือและสรุปความคืบหน้าตลอดช่วงการทำงาน
+The web application is a Single-page Web Application.
+“plan” agreed among the members of the group
+\begin{itemize}
+    \item The web application help students with Online Learning (preferable in one specific aspect).
+    \begin{itemize}
+        \item ทางกลุ่มเราตกลงกันทำเว็บประเมินอาจารย์เพื่อสะท้อนความคิดเห็นของผู้เรียนต่ออาจารย์ โดยคาดหวังให้ผู้เรียนสะท้อนข้อดีและข้อเสียของการสอนในรูปแบบต่างๆของอาจารย์แต่ละท่านเพื่อทั้งตัวอาจารย์และบุคลากรที่เกี่ยวข้องสามารถนำข้อมูลไปปรับใช้หรือพัฒนาการสอน ผู้เรียนรุ่นต่อไปสามารถพิจารณาเข้าเรียนจากลักษณะการสอนของอาจารย์แต่ละท่านที่ตรงกับวิธีการเรียนของแต่ละคนได้ 
+    \end{itemize}
+    \item The front-end of the web application does NOT use any libraries/frameworks/plugins other than what was used in Activity 6. 
+    \begin{itemize}
+        \item เราทำ single-page web application ให้มีหลายหน้า (home, about, contact ,หน้ารายละเอียดของอาจารย์แต่ละท่าน) โดยการวาด elements ในหน้าเดิม 
+    \end{itemize}
+    \item The back-end of the web application does NOT use any libraries/frameworks/plugins other than what was used in Activity 7.
+    \begin{itemize}
+        \item โดยทั้งส่วนหน้าบ้านและหลังบ้านใช้ libraries/frameworks/plugins เพียงในส่วนของ activity 6 และ 7 เท่านั้น 
+    \end{itemize}
+    \item All members contribute to the development and the contribution of each member is according to a
+    \begin{itemize}
+        \item สมาชิกกลุ่มได้มีการวางแผนและแบ่งงาน มีการนัดประชุมเพื่ออัพเดทงานที่เหลือและสรุปความคืบหน้าตลอดช่วงการทำงาน
+        \item รายละเอียดการวางอยู่ที่ \textbf{\autoref{sec:plan}}
+    \end{itemize}
+\end{itemize}
 \section{Challenging requirements}
 
 การออกแบบเว็บไซต์สำหรับแสดงผลในหน้าจอหลายขนาด เริ่มทำโดยออกแบบเว็บไซต์ที่ใช้บนpcก่อน แล้วจึงไปปรับใช้ในการออกแบบของมือถือผ่านคำสั่ง@media (max-width: 480px)
@@ -69,19 +93,31 @@
 
 \section{ขั้นตอนการทำงาน}
 ในส่วนของการออกแบบหน้าเว็บของเราพยายามให้ Interface มีความเข้าถึงผู้ใช้ได้ดี และเข้าใจง่าย โดยเรามีการ Design ผ่าน Figma ก่อนมาทำใน css
-\pagebreak
-\section{หน้าที่รับผิดชอบ}
+\subsection{แผนการทำงาน}
+\label{sec:plan}
+\subsection{หน้าที่รับผิดชอบ}
 \begin{enumerate}
     \item Naphat Darunaitorn
           \begin{itemize}
-              \item Project Manager
-              \item Organizer
-              \item Website Feature Design
-              \item Report
+              \item Project Manager - Assigning meetings, Assigning works to group member,
+              \item Website Feature Design - Design the features that should be in the website and Creating draft UI in html
           \end{itemize}
-    \item Noppakorn Jiravaranun - Frontend Development, Backend Design and Development
-    \item Nopparuj Poonsubanan - Frontend Development, Backend Development
-    \item Ittipat Yodprasit - Frontend Design and Development
+    \item Noppakorn Jiravaranun
+          \begin{itemize}
+              \item Frontend Development - Creating css stylesheets for the website and Creation of UI Layout
+              \item Backend Design - Design database schema and Handling the permission of using firebase
+              \item Backend Development - JavaScript development with firebase
+              \item Developer Experiences Improvement - Setting up GitHub with automatic firebase deployment, Merging Pull Request, Code Review
+          \end{itemize}
+    \item Nopparuj Poonsubanan
+          \begin{itemize}
+              \item Frontend Development - Creating css stylesheets for the website and Creation of UI Layout
+              \item Backend Development - JavaScript development with firebase
+          \end{itemize}
+    \item Ittipat Yodprasit
+          \begin{itemize}
+              \item Frontend Design - Frontend Design in Figma and Beautiful UI Design
+              \item Frontend Development - Creating css stylesheets for the website and Creation of UI Layout
+          \end{itemize}
 \end{enumerate}
-
 \end{document}
